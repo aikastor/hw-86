@@ -1,5 +1,5 @@
 import React from 'react';
-import {Nav, NavItem, NavLink} from "reactstrap";
+import {NavItem, NavLink} from "reactstrap";
 import {NavLink as RouterNavLink} from "react-router-dom";
 
 const AnonymousMenu = () => (

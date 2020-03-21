@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import {fetchPost} from "../../store/actions/postsActions";
 import {connect} from "react-redux";
 import {apiURL} from "../../constants";
@@ -46,8 +46,8 @@ class PostPage extends Component {
         { this.props.comments &&
 
         this.props.comments.map(comment => (
-          <>
-            <Media>
+          <Fragment key={comment._id}>
+            <Media >
             <Media body>
               <Badge color="secondary" pill>{moment(comment.datetime).format('HH:MM (MMMM Do YYYY)')} by  {comment.author.username}: </Badge>
               <br/>
@@ -55,7 +55,7 @@ class PostPage extends Component {
             </Media>
           </Media>
           <hr/>
-          </>
+          </Fragment>
 
 
           ))}
